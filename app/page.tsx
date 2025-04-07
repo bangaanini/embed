@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-
+import { videoList } from '../data/videos'
 
 export default function Home() {
   const [url, setUrl] = useState('')
@@ -35,7 +35,17 @@ export default function Home() {
       <hr style={{ margin: '2rem 0' }} />
 
       <h2>📺 Daftar Video</h2>
-
+      <ul>
+        {videoList.map((video, index) => (
+          <li key={index} style={{ marginBottom: '1rem' }}>
+            <strong>{video.title}</strong>
+            <br />
+            <a href={`/embed?url=${encodeURIComponent(video.url)}`} target="_blank">
+              Tampilkan di OBS
+            </a>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }

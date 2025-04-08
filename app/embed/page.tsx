@@ -32,13 +32,14 @@ function EmbedContent() {
           <iframe
             src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
               url
-            )}&show_text=0&autoplay=1&width=560`}
+            )}&show_text=0&autoplay=1&mute=0&width=560`}
             width="100%"
             height="100%"
             style={{ border: 'none', overflow: 'hidden' }}
             scrolling="no"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen
+            allowTransparency={true}
           />
         )
       } else {
